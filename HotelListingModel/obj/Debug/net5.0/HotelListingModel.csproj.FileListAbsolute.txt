@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\bin\Debug\net5.0\HotelListingModel.deps.json
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\bin\Debug\net5.0\HotelListingModel.dll
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\bin\Debug\net5.0\ref\HotelListingModel.dll
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\bin\Debug\net5.0\HotelListingModel.pdb
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.AssemblyInfo.cs
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.dll
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\ref\HotelListingModel.dll
+C:\Users\hp\source\repos\HotelListingSln\HotelListingModel\obj\Debug\net5.0\HotelListingModel.pdb

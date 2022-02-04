@@ -1,7 +1,13 @@
+using AutoMapper;
+using HotelListing.Configuration;
+using HotelListingDataAccess.Data;
+using HotelListingDataAccess.Repository.Implementation;
+using HotelListingDataAccess.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,12 +32,25 @@ namespace HotelListing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<DataBaseContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("SqlConnection"))
+            );
             services.AddControllers();
+            services.AddCors(policy =>
+            {
+                policy.AddPolicy("CorPolicy", builder =>
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
+            services.AddAutoMapper(typeof(MapperInitializer));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+       
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelListing", Version = "v1" });
             });
+            services.AddControllers().AddNewtonsoftJson(op => op.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +64,7 @@ namespace HotelListing
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 
